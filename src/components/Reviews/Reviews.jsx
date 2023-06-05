@@ -29,3 +29,4 @@ export const Reviews = () => {
 		<ReviewItem reviews={reviews} isLoading={isLoading} />
 	)
 }
+export default Reviews;
