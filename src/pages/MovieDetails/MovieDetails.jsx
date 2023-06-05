@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, Suspense } from 'react';
 import { Outlet, NavLink, useParams, useLocation } from 'react-router-dom';
 
 import { getMovieDetails } from '../../api/Api';
@@ -44,11 +44,13 @@ export const MovieDetails = () => {
               </li>
             </ul>
           </div>
-			
-			<Outlet />
+			<Suspense fallback={<div>Loading...</div>}>
+				<Outlet />
+			</Suspense>
 		</>
 	)
 }
+export default MovieDetails;
 
 
 
